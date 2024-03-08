@@ -1,13 +1,13 @@
-# `dorian-sort-yaml`
+# `dorian-anonymize-yaml`
 
-Sorts keys of hashes of YAML files
+Anonymize YAML files
 
-e.g. `sort-yaml config/locales/*`
+e.g. `anonymize-yaml spec/**/*.yml`
 
 ### Install
 
 ```bash
-gem install dorian-sort-yaml
+gem install dorian-anonymize-yaml
 ```
 
 Or as part of my other gems:
@@ -19,5 +19,5 @@ gem install dorian
 ### Usage
 
 ```bash
-git ls-files | grep "\.yml\$" | xargs sort-yaml
+git ls-files spec | grep "\.yml\$" | xargs anonymize-yaml
 ```

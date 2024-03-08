@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "yaml"
+
+def anonymize_yaml(data)
+  if data.is_a?(Array)
+    data.map { |element| anonymize_yaml(element) }
+  elsif data.is_a?(Hash)
+    data.transform_values { |value| anonymize_yaml(value) }
+  elsif data.is_a?(String)
+    data.gsub(/[0-9]/, "0").gsub(/[a-z]/, "a").gsub(/[A-Z]/, "A")
+  elsif data.is_a?(Integer)
+    0
+  elsif data.is_a?(Float)
+    0.0
+  else
+    raise NotImplementedError, data.class.name
+  end
+end
+
+if ARGV[0] == "--help" || ARGV[0] == "-h"
+  puts "USAGE: anonymize-yaml FILES..."
+  puts "USAGE: ... | anonymize-yaml"
+  exit
+end
+
+inputs = ARGV
+
+if inputs.empty?
+  inputs = $stdin.each_line.to_a
+
+  inputs =
+    if File.exist?(inputs.first.strip)
+      inputs.map(&:strip)
+    else
+      [inputs.join]
+    end
+end
+
+inputs.each do |input|
+  content = File.exist?(input) ? File.read(input) : input
+  yaml = anonymize_yaml(YAML.safe_load(content)).to_yaml
+  File.exist?(input) ? File.write(input, yaml) : puts(yaml)
+end
