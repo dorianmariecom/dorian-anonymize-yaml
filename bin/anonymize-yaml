@@ -16,6 +16,8 @@ def anonymize_yaml(data)
     0
   elsif data.is_a?(Float)
     0.0
+  elsif data.is_a?(TrueClass) || data.is_a?(FalseClass)
+    false
   else
     raise NotImplementedError, data.class.name
   end
