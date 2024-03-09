@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dorian-sort-yaml (0.2.2)
+    dorian-anonymize-yaml (0.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -12,7 +12,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  dorian-sort-yaml!
+  dorian-anonymize-yaml!
 
 RUBY VERSION
    ruby 3.3.0p0
