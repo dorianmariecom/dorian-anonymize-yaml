@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dorian-anonymize-yaml (0.1.4)
+    dorian-anonymize-yaml (0.1.5)
 
 GEM
   remote: https://rubygems.org/
