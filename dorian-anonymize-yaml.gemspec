@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "dorian-anonymize-yaml"
-  s.version = "0.1.3"
+  s.version = "0.1.4"
   s.summary = "Anonymize YAML file"
   s.description = "#{s.summary}\n\ne.g. `anonymize-yaml spec/**/*.yml`"
   s.authors = ["Dorian Marié"]
@@ -12,4 +12,6 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/dorianmariecom/anonymize-yaml"
   s.license = "MIT"
   s.metadata = { "rubygems_mfa_required" => "true" }
+
+  s.required_ruby_version = ">= 3.3.0"
 end
