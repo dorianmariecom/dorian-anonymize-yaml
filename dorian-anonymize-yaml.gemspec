@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "dorian-anonymize-yaml"
-  s.version = "0.2.1"
+  s.version = "0.2.2"
   s.summary = "anonymize yaml file"
   s.description = s.summary
   s.authors = ["Dorian Marié"]
