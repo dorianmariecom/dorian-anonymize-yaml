@@ -34,6 +34,4 @@ end
 inputs = parsed.arguments + parsed.files.map { |file| File.read(file) }
 inputs = [$stdin.each_line.to_a.join] if inputs.empty?
 
-inputs.each do |input|
-  puts anonymize_yaml(YAML.safe_load(input)).to_yaml
-end
+inputs.each { |input| puts anonymize_yaml(YAML.safe_load(input)).to_yaml }
