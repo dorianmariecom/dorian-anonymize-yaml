@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dorian-anonymize-yaml (1.1.1)
+    dorian-anonymize-yaml (1.1.2)
       dorian-arguments
 
 GEM
