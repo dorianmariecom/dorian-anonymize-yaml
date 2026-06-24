@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name = "dorian-anonymize-yaml"
   s.version = File.read("VERSION").strip
   s.summary = "anonymize yaml file"
-  s.description = s.summary
+  s.description = "Anonymize scalar values in YAML input while preserving structure."
   s.authors = ["Dorian Marié"]
   s.email = "dorian@dorianmarie.com"
   s.files = ["bin/anonymize-yaml"]
@@ -12,6 +12,6 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/dorianmariecom/dorian-anonymize-yaml"
   s.license = "MIT"
   s.metadata = { "rubygems_mfa_required" => "true" }
-  s.add_dependency "dorian-arguments"
+  s.add_dependency "dorian-arguments", ">= 1.2.3", "< 2"
   s.required_ruby_version = ">= 3.0"
 end

@@ -1,23 +1,35 @@
 # `dorian-anonymize-yaml`
 
-Anonymize YAML files
+Anonymize YAML values while preserving the YAML shape.
 
-e.g. `anonymize-yaml spec/**/*.yml`
-
-### Install
+## Install
 
 ```bash
 gem install dorian-anonymize-yaml
 ```
 
-Or as part of my other gems:
+Also included in the aggregate gem:
 
 ```bash
 gem install dorian
 ```
 
-### Usage
+## Usage
 
 ```bash
-git ls-files spec | grep "\.yml\$" | xargs anonymize-yaml
+anonymize-yaml [yaml ...] [file ...]
+```
+
+Run `anonymize-yaml -h` for generated option details and `anonymize-yaml -v` for the installed version.
+
+## Notes
+
+- Strings keep their letter/digit pattern, numbers become zeroes, booleans become `false`, and arrays/hashes keep their structure.
+
+## Examples
+
+### Anonymize inline YAML
+
+```bash
+anonymize-yaml "name: Secret123"
 ```
